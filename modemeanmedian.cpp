@@ -19,19 +19,29 @@ void sort(std::vector<int> &numbers){
      
 }
 
+void printmode(int *numArray){
+    for(int i=0;i<5;i++){
+        if(numArray[i]!=0){
+        cout<<"mode is "<<numArray[i]<<endl;
+        }
+    }
+}
 
-void getNumbercount(std::vector<int> numbers){
-    int count=1;
-    int countArray[5];
+void getMode(std::vector<int> numbers){
+    //int modeCount=0;
+    int numArray[5]={0,0,0,0,0};
     int mode=0;
-    //int countMode=1;
+    std::sort(numbers.begin(), numbers.end());
     for(int i=0;i<=numbers.size();i++){
-        for(int j=1;i<numbers.size();i++){
-            if(numbers[i]==numbers[j]){
-                count++;
+        for(int j=i+1;j<numbers.size();j++){
+            if(numbers[i]==numbers[j] && numbers[i]!=mode){
+              mode=numbers[i];
+              //modeCount++;
+              numArray[i]=mode;
             }
         }
     }
+    printmode(numArray);
 }
 
 int main(){
@@ -48,6 +58,6 @@ int main(){
     std::cout<<"The mean is "<<mean<<std::endl;
     sort(intArray);
     std::cout<<"The median is "<<intArray.at(2)<<endl;
-    getNumbercount(intArray);
+    getMode(intArray);
 }
 
