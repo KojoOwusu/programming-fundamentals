@@ -36,7 +36,6 @@ int main(int argc, char *argv[])
     //buffer for strings
     char BUFFER[50];
 
-    /*
     cout << "enter " << ARRAYSIZE << " strings!" << endl;
     for (int i = 0; i < ARRAYSIZE; i++)
     {
@@ -54,7 +53,8 @@ int main(int argc, char *argv[])
         cout << array[i] << endl;
         delete[] array[i];
     }
-    */
+
+    //using sort function on commandline arguments
     alpha_Sort(argv, argc);
     cout << "sort commandline arguments" << endl;
     for (int i = 0; i < argc; i++)
